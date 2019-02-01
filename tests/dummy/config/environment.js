@@ -20,6 +20,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'ember-google-maps': {
+      key: 'FILL-ME-IN', // @TODO switch to using .env files
+      language: 'en',
+      region: 'US',
+      protocol: 'https',
+      version: '3.35',
+      libraries: [], // Optional libraries
     }
   };
 

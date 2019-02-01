@@ -1,0 +1,8 @@
+{{#g-map lat="39.746674" lng="-105.0009457" zoom=14 disableDefaultUI=true as |g|}}
+  {{#g.control position="TOP_CENTER"}}
+    <div class="map-control">
+      {{#link-to "map.index"}}Home{{/link-to}} {{#link-to "map.city-center"}}City Center{{/link-to}}
+    </div>
+  {{/g.control}}
+  {{g.outlet}}
+{{/g-map}}
