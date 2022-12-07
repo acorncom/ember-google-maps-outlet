@@ -1,31 +1,32 @@
-ember-google-maps-outlet
-==============================================================================
+# ember-google-maps-outlet
 
 [Short description of the addon.]
 
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
-* Ember.js v2.18 or above
-* Ember CLI v2.13 or above
+* Ember.js v3.28 or above
+* Ember CLI v3.28 or above
+* Node.js v14 or above
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-google-maps-outlet
 ```
 
 
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 [Longer description of how to use the addon in apps.]
 
 
-License
-------------------------------------------------------------------------------
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
