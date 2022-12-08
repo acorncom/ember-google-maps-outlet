@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
 
-export default Route.extend({
+export default class IndexHotels extends Route {
+  @service store;
+
   model() {
-    return this.get('store').peekAll('hotel');
+    return this.store.peekAll('hotel');
   }
-});
+}

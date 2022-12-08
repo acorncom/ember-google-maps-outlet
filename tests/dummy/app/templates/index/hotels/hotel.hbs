@@ -1,13 +1,13 @@
-{{#g-map-route as |g|}}
-  {{#g.overlay lat=model.lat lng=model.lng}}
+<GMapRoute as |g|>
+  <g.overlay @lat={{@model.lat}} @lng={{@model.lng}}>
     <div class="hotel-overlay">
-      <h1>{{model.name}}</h1>
+      <h1>{{@model.name}}</h1>
       <ul>
-        <li>Address: {{model.address}}</li>
-        <li><a href={{model.website}} target="_blank" rel="noopener">Visit Website</a></li>
+        <li>Address: {{@model.address}}</li>
+        <li><a href={{@model.website}} target="_blank" rel="noopener noreferrer">Visit Website</a></li>
       </ul>
 
-      {{#link-to "index.hotels"}}Close{{/link-to}}
+      <LinkTo @route="index.hotels">Close</LinkTo>
     </div>
-  {{/g.overlay}}
-{{/g-map-route}}
+  </g.overlay>
+</GMapRoute>
