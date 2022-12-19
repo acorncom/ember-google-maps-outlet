@@ -1,0 +1,17 @@
+{{#if this.mapRouter.map}}
+  {{yield (hash
+      map=this.mapRouter.map
+      marker=(component 'g-map/marker' getContext=this.mapRouter.getContext)
+      circle=(component 'g-map/circle' getContext=this.mapRouter.getContext)
+      rectangle=(component 'g-map/rectangle' getContext=this.mapRouter.getContext)
+      polyline=(component 'g-map/polyline' getContext=this.mapRouter.getContext)
+      polygon=(component 'g-map/polygon' getContext=this.mapRouter.getContext)
+      directions=(component 'g-map/directions' getContext=this.mapRouter.getContext)
+      control=(component 'g-map/control' getContext=this.mapRouter.getContext)
+      overlay=(component 'g-map/overlay' getContext=this.mapRouter.getContext)
+      infoWindow=(component 'g-map/info-window' getContext=this.mapRouter.getContext)
+      autocomplete=(component 'g-map/autocomplete' getContext=this.mapRouter.getContext)
+      outlet=(component 'outlet' getContext=this.mapRouter.getContext)
+    )}}
+  {{outlet}}
+{{/if}}

@@ -1,6 +1,6 @@
-<GMapRoute as |g|>
-  <g.overlay @lat={{@model.lat}} @lng={{@model.lng}}>
-    <div class="hotel-overlay">
+<MapRoute as |map|>
+  <map.overlay @lat={{@model.lat}} @lng={{@model.lng}}>
+    <div class="hotel-overlay" data-test-hotel-overlay-id="{{@model.id}}">
       <h1>{{@model.name}}</h1>
       <ul>
         <li>Address: {{@model.address}}</li>
@@ -9,5 +9,5 @@
 
       <LinkTo @route="index.hotels">Close</LinkTo>
     </div>
-  </g.overlay>
-</GMapRoute>
+  </map.overlay>
+</MapRoute>

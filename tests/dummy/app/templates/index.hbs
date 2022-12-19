@@ -1,9 +1,8 @@
-<GMap @lat="39.746674" @lng="-105.0009457" @zoom={{14}} @disableDefaultUI={{true}} as |g|>
-  <g.control @position="TOP_CENTER">
-    <div class="map-control">
-      <LinkTo @route="index.hotels">Home</LinkTo> <LinkTo @route="index.city-center">City Center</LinkTo>
+<GMap @lat="39.746674" @lng="-105.0009457" @zoom={{14}} @disableDefaultUI={{true}} as |map|>
+  <map.control @position="TOP_CENTER">
+    <div class="map-control" data-test-map-navigation>
+      <LinkTo @route="index.hotels" data-test-link-home>Home</LinkTo> <LinkTo @route="index.city-center" data-test-link-citycenter>City Center</LinkTo>
     </div>
-  </g.control>
-
-  {{g.outlet g=g}}
+  </map.control>
+  <map.outlet />
 </GMap>

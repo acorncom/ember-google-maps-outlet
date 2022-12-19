@@ -1,9 +1,10 @@
-<GMapRoute as |g|>
+<MapRoute as |map|>
   {{#each @model as |marker|}}
-    <g.marker
-        @lat={{marker.lat}}
-        @lng={{marker.lng}}
-        @onClick={{action "onClick" marker}} />
+    <map.marker
+      @id={{marker.id}}
+      @lat={{marker.lat}}
+      @lng={{marker.lng}}
+      @onClick={{action "onClick" marker}} />
   {{/each}}
-  {{g.outlet g=g}}
-</GMapRoute>
+  <map.outlet />
+</MapRoute>

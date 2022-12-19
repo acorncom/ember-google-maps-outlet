@@ -13,4 +13,7 @@ Router.map(function () {
     });
     this.route('city-center');
   });
+  this.route('map', function () {
+    this.route('city-center');
+  });
 });

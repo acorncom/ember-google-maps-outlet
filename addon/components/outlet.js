@@ -1,24 +1,21 @@
-/* global google */
-
 import MapComponent from 'ember-google-maps/components/g-map/map-component';
 import { inject as service } from '@ember/service';
 
 export default class MapOutlet extends MapComponent {
   @service('map-router') mapRouter;
 
-  // ember-google-maps needed private variable
   get name() {
     return 'outlet';
   }
 
   setup() {
-    let g = this.args.g;
-    let context = this.args.getContext;
-    this.mapRouter.g = g;
+    this.mapRouter.getContext = this.args.getContext;
+    this.mapRouter.map = this.map;
   }
 
   teardown() {
-    this.mapRouter.g = undefined;
+    this.mapRouter.map = undefined;
+    this.mapRouter.getContext = undefined;
   }
 }
 
