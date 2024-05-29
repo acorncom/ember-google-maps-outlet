@@ -10,7 +10,7 @@ module.exports = function (defaults) {
         //
         // The value is the name of the component — the same name you'd pass
         // to the component helper.
-        outlet: 'outlet',
+        outlet: 'map-outlet',
       },
     },
   });
