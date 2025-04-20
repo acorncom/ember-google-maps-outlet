@@ -1,18 +1,5 @@
 {{#if this.mapRouter.map}}
-  {{! TODO: work out how to opt-in to passing all ember-google-map components out, including other custom ones}}
-  {{yield (hash
-      map=this.mapRouter.map
-      marker=(component 'g-map/marker' getContext=this.mapRouter.getContext)
-      circle=(component 'g-map/circle' getContext=this.mapRouter.getContext)
-      rectangle=(component 'g-map/rectangle' getContext=this.mapRouter.getContext)
-      polyline=(component 'g-map/polyline' getContext=this.mapRouter.getContext)
-      polygon=(component 'g-map/polygon' getContext=this.mapRouter.getContext)
-      directions=(component 'g-map/directions' getContext=this.mapRouter.getContext)
-      control=(component 'g-map/control' getContext=this.mapRouter.getContext)
-      overlay=(component 'g-map/overlay' getContext=this.mapRouter.getContext)
-      infoWindow=(component 'g-map/info-window' getContext=this.mapRouter.getContext)
-      autocomplete=(component 'g-map/autocomplete' getContext=this.mapRouter.getContext)
-      outlet=(component 'map-outlet' getContext=this.mapRouter.getContext)
-    )}}
-  {{outlet}}
+  {{yield (this.mapComponents (hash
+    outlet=(component 'map-outlet' getContext=this.mapRouter.getContext)
+  ))}}
 {{/if}}
