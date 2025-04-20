@@ -1,7 +1,7 @@
 <GMap @lat="39.746674" @lng="-105.0009457" @zoom={{14}} @disableDefaultUI={{true}} as |g|>
   <g.control @position="TOP_CENTER">
-    <div class="map-control">
-      <LinkTo @route="map.index">Home</LinkTo> <LinkTo @route="map.city-center">City Center</LinkTo>
+    <div class="map-control" data-test-diff-map-navigation>
+      <LinkTo @route="map.index">Home</LinkTo> <LinkTo @route="map.city-center">City Center</LinkTo> <LinkTo @route="index" data-test-link-main-map>Main Map</LinkTo>
     </div>
   </g.control>
   <g.outlet @components={{g}} />
