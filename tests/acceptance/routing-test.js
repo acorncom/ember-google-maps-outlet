@@ -22,7 +22,9 @@ module('Acceptance | routing', function (hooks) {
     trigger(marker, 'click');
 
     let infoWindow = await waitFor('[data-test-hotel-overlay-id="the-curtis"]');
-    assert.dom(infoWindow).containsText('The Curtis Address: 1405 Curtis Street');
+    assert
+      .dom(infoWindow)
+      .containsText('The Curtis Address: 1405 Curtis Street');
   });
 
   test('switching between routes now shows a circle', async function (assert) {
@@ -35,7 +37,15 @@ module('Acceptance | routing', function (hooks) {
     await waitFor('[data-test-link-citycenter].active');
     let { components } = await waitForMap();
 
-    assert.equal(components.circles && components.circles.length, 1, 'and that we have a length of 1');
-    assert.equal(components.markers && components.markers.length, 0, 'and that markers were torn down');
+    assert.equal(
+      components.circles && components.circles.length,
+      1,
+      'and that we have a length of 1'
+    );
+    assert.equal(
+      components.markers && components.markers.length,
+      0,
+      'and that markers were torn down'
+    );
   });
 });
