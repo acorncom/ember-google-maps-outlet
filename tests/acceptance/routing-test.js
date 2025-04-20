@@ -48,4 +48,24 @@ module('Acceptance | routing', function (hooks) {
       'and that markers were torn down'
     );
   });
+
+  test('moving between maps and back does not have problems', async function (assert) {
+    await visit('/');
+    await waitForMap();
+    await waitFor('[data-test-map-navigation]');
+
+    assert.dom('[data-test-link-diff-map]').containsText('Different Map');
+    await click('[data-test-link-diff-map]');
+
+    await waitForMap();
+    await waitFor('[data-test-diff-map-navigation]');
+
+    assert.dom('[data-test-link-main-map]').containsText('Main Map');
+    await click('[data-test-link-main-map]');
+
+    await waitForMap();
+    await waitFor('[data-test-map-navigation]');
+
+    assert.dom('[data-test-link-diff-map]').containsText('Different Map');
+  });
 });

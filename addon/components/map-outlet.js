@@ -9,12 +9,7 @@ export default class MapOutlet extends MapComponent {
     return 'outlet';
   }
 
-  setup() {
-    this.mapRouter.getContext = this.args.getContext;
-    this.mapRouter.map = this.publicAPI.map;
-
-    let components = this.args.components;
-
+  setup = () => {
     assert(
       `
 ember-google-maps-outlet: The "components" argument must be passed in.
@@ -23,11 +18,15 @@ ember-google-maps-outlet: The "components" argument must be passed in.
 
 Without this argument, no g-map components will be available in the outlet.
       `,
-      components
+      this.args.components
     );
 
-    this.mapRouter.components = components;
-  }
+    this.mapRouter.setup(
+      this.publicAPI.map,
+      this.args.getContext,
+      this.args.components
+    );
+  };
 
   teardown() {
     this.mapRouter.teardown();
