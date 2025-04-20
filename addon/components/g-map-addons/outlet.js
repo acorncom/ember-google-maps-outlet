@@ -28,7 +28,6 @@ Without this argument, no g-map components will be available in the outlet.
     );
   };
 
-  // TODO: decide if we need to confirm this has bugs or not ...
   teardown() {
     this.mapRouter.teardown();
 

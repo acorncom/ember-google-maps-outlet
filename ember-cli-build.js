@@ -4,15 +4,8 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
   const app = new EmberAddon(defaults, {
-    'ember-google-maps': {
-      customComponents: {
-        // The key is the name you'd like to use in your templates.
-        //
-        // The value is the name of the component — the same name you'd pass
-        // to the component helper.
-        outlet: 'map-outlet',
-      },
-    },
+    // 'ember-google-maps': {
+    // },
   });
 
   /*

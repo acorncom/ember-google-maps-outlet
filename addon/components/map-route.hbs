@@ -1,5 +1,3 @@
 {{#if this.mapRouter.map}}
-  {{yield (this.mapComponents (hash
-    outlet=(component 'map-outlet' getContext=this.mapRouter.getContext)
-  ))}}
+  {{yield this.mapComponents}}
 {{/if}}
