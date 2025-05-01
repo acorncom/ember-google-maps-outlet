@@ -1,3 +1,6 @@
 {{#if this.mapRouter.map}}
-  {{yield this.mapComponents}}
+  {{yield (hash
+    components=this.mapComponents
+    props=this.mapRouter.props
+  )}}
 {{/if}}

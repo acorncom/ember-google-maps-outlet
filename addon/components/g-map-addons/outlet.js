@@ -18,13 +18,14 @@ ember-google-maps-outlet: The "components" argument must be passed in.
 
 Without this argument, no g-map components will be available in the outlet.
       `,
-      this.args.components
+      this.args.components,
     );
 
     this.mapRouter.setup(
       this.publicAPI.map,
       this.args.getContext,
-      this.args.components
+      this.args.components,
+      this.args.props ?? {},
     );
   };
 

@@ -5,25 +5,26 @@ export default class MapRouter extends Service {
   @tracked getContext = undefined;
   @tracked map = undefined;
   @tracked components = {};
-  isSetup = false;
+  @tracked props = {};
+  _isSetup = false;
 
-  setup(map, getContext, components) {
-    if (!this.isSetup) {
+  setup(map, getContext, components, props = {}) {
+    if (!this._isSetup) {
       this.getContext = getContext;
       this.map = map;
-      this.isSetup = true;
+      this._isSetup = true;
 
-      // TODO: if *other* addons also setup custom components that aren't registered
-      // with the core ember-google-maps addon, we may end up with components that
-      // aren't useable if this cache goes stale ...
       this.components = components ?? {};
     }
+
+    this.props = props;
   }
 
   teardown() {
-    this.isSetup = false;
+    this._isSetup = false;
     this.getContext = undefined;
     this.map = undefined;
     this.components = {};
+    this.props = {};
   }
 }
