@@ -27,6 +27,11 @@ Without this argument, no g-map components will be available in the outlet.
       this.args.components,
       this.args.props ?? {},
     );
+
+    // gets setup as this.mapComponent w/ ember-google-maps
+    // returning this as a value *also* registers our desire to
+    // have the teardown method below called
+    return this.mapRouter;
   };
 
   teardown() {
